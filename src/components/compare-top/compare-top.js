@@ -42,20 +42,20 @@ function CompareTop() {
 						</div>
 					</div>
 
-					<div class="compare-top__item" data-cardid="nrewards" role="listitem">
-						<div class="item__wrapper">
+					<div className="compare-top__item" data-cardid="nrewards" role="listitem">
+						<div className="item__wrapper">
 							<figure>
-								<img alt="" class="item__image" src="/clientlibs/assets/dam/credit-cards/nrewards/nrewards.svg" />
+								<img alt="" className="item__image" src="/clientlibs/assets/dam/credit-cards/nrewards/nrewards.svg" />
 							</figure>
 
-							<a class="item__link" href="/loans-cards/credit-cards/nrewards-secured/">
-								<span class="item__title"><em>n</em>Rewards® Secured</span>
+							<a className="item__link" href="/loans-cards/credit-cards/nrewards-secured/">
+								<span className="item__title"><em>n</em>Rewards® Secured</span>
 							</a>
-							<div class="item__ctas">
-								<a href="#nrewards-modal" class="item__button btn btn_center original-nrewards-link" data-href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC03" data-modal="true">Apply Now <span class="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
-								<a href="/loans-cards/credit-cards/nrewards-secured/" class="item__details-link">Card Details <span class="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
+							<div className="item__ctas">
+								<a href="#nrewards-modal" className="item__button btn btn_center original-nrewards-link" data-href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC03" data-modal="true">Apply Now <span className="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
+								<a href="/loans-cards/credit-cards/nrewards-secured/" className="item__details-link">Card Details <span className="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
 							</div>
-							<button class="item__close-button" aria-label="Remove the nRewards® Secured card from the Compare Results page"><i class="icon-close-solid" aria-hidden="true"></i></button>
+							<button className="item__close-button" aria-label="Remove the nRewards® Secured card from the Compare Results page"><i className="icon-close-solid" aria-hidden="true"></i></button>
 						</div>
 					</div>
 
