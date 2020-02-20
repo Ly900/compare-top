@@ -1,10 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../../images/logo.svg';
+import './app.scss';
+import CompareTop from '../compare-top/compare-top.js';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App compare-top">
+      <CompareTop />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
