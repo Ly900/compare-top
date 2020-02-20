@@ -1,0 +1,8 @@
+.compare-top {
+	background: pink;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-evenly;
+	}
+}
