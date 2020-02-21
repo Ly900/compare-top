@@ -1,0 +1,24 @@
+[{
+		"id": "cat1",
+		"name": "Cat No. 1",
+		"detailsLink": "cat1.html",
+		"adoptLink": "cat1/adopt.html",
+		"imageURL": "cashrewards.svg"
+	},
+	{
+		"id": "cat2",
+		"name": "Cat No. 2",
+		"detailsLink": "cat2.html",
+		"adoptLink": "cat1/adopt.html",
+		"imageURL": "morerewards.svg"
+	},
+	{
+		"id": "bear1",
+		"name": "Bear No. 1",
+		"detailsLink": "cat3.html",
+		"adoptLink": "bear1/adopt.html",
+		"imageURL": "http://placebear.com/496/312"
+	}
+
+
+]
