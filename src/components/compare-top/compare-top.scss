@@ -19,8 +19,7 @@ $large: 994px;
 	&__inner-wrapper {
 		display: flex;
 		justify-content: space-evenly;
-		margin-left: auto;
-		margin-right: auto;
+		margin: 0 auto;
 		max-width: 74.375em;
 	}
 
@@ -38,7 +37,7 @@ $large: 994px;
 		display: table;
 	}
 
-	&__item-image {
+	&__item-img {
 		width: 75%;
 		min-width: 94px;
 		max-width: 210px;
@@ -46,6 +45,10 @@ $large: 994px;
 
 		@include respond-min($medium) {
 			width: 90%;
+		}
+
+		@include respond-min($large) {
+			width: 100%;
 		}
 	}
 

@@ -16,7 +16,7 @@ function CompareTop() {
 					<div className="compare-top__item" data-cardid="cashrewards" role="listitem">
 						<div className="compare-top__item-wrapper">
 							<figure className="compare-top__item-img-wrapper">
-								<img alt="" className="compare-top__item-image" src={cashRewardsImg} />
+								<img alt="" className="compare-top__item-img" src={cashRewardsImg} />
 							</figure>
 
 							<a className="compare-top__item-link" href="/loans-cards/credit-cards/cash-rewards/">
@@ -36,7 +36,7 @@ function CompareTop() {
 					<div className="compare-top__item" data-cardid="morerewards" role="listitem">
 						<div className="compare-top__item-wrapper">
 							<figure className="compare-top__item-img-wrapper">
-								<img alt="" className="compare-top__item-image" src={amexImg} />
+								<img alt="" className="compare-top__item-img" src={amexImg} />
 							</figure>
 
 							<a className="compare-top__item-link" href="/loans-cards/credit-cards/more-rewards/">
@@ -56,7 +56,7 @@ function CompareTop() {
 					<div className="compare-top__item" data-cardid="nrewards" role="listitem">
 						<div className="compare-top__item-wrapper">
 							<figure className="compare-top__item-img-wrapper">
-								<img alt="" className="compare-top__item-image" src={nRewardsImg} />
+								<img alt="" className="compare-top__item-img" src={nRewardsImg} />
 							</figure>
 
 							<a className="compare-top__item-link" href="/loans-cards/credit-cards/nrewards-secured/">
@@ -77,7 +77,7 @@ function CompareTop() {
 					{/* <div className="compare-top__item compare-top__item_blank-card" role="listitem">
 						<div className="compare-top__item-wrapper">
 							<div className="compare-top__item-link">
-								<img src="/clientlibs/assets/dam/credit-cards/blank-card.svg" className="compare-top__item-image item-image_blank-card" alt="" />
+								<img src="/clientlibs/assets/dam/credit-cards/blank-card.svg" className="compare-top__item-img item-img_blank-card" alt="" />
 								<span className="compare-top__item-title item-title_text_empty">- Empty -</span>
 							</div>
 							<div className="compare-top__item-ctas">
