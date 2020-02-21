@@ -119,4 +119,14 @@ $large: 994px;
 		}
 	}
 
+	// Styling for when the images are hidden.
+	&_no-imgs {
+
+		.compare-top__item-img-wrapper,
+		.compare-top__item-close-button {
+			display: none;
+
+		}
+	}
+
 }

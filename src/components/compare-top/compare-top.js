@@ -10,7 +10,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 function CompareTop() {
 	return (
 		<div className="compare-top__outer-wrapper">
-			<div className="compare-top" role="region" aria-label="Credit Card Compare Tool">
+			<div className="compare-top compare-top_no-imgs" role="region" aria-label="Credit Card Compare Tool">
 				<div className="compare-top__inner-wrapper" role="list">
 
 					<div className="compare-top__item" data-cardid="cashrewards" role="listitem">
