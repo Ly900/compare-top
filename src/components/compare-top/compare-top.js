@@ -4,12 +4,14 @@ import '../../utils/utils.scss';
 import nRewardsImg from '../../images/nrewards.svg';
 import cashRewardsImg from '../../images/cashrewards.svg';
 import amexImg from '../../images/amex.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 function CompareTop() {
 	return (
 		<div className="compare-top__outer-wrapper">
 			<div className="compare-top" role="region" aria-label="Credit Card Compare Tool">
-				<div className="compare-top__wrapper" role="list">
+				<div className="compare-top__inner-wrapper" role="list">
 
 					<div className="compare-top__item" data-cardid="cashrewards" role="listitem">
 						<div className="compare-top__item-wrapper">
@@ -21,10 +23,13 @@ function CompareTop() {
 								<span className="compare-top__item-title"><em>cash</em>Rewards</span>
 							</a>
 							<div className="compare-top__item-ctas">
-								<a href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC01" className="compare-top__item-button btn btn_center">Apply Now <span className="sr-only">for the <em>cash</em>Rewards card.</span></a>
-								<a href="/loans-cards/credit-cards/cash-rewards/" className="compare-top__item-details-link">Card Details <span className="sr-only">for the <em>cash</em>Rewards card.</span></a>
+								<a href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC01" className="compare-top__item-link compare-top__item-button btn btn_center">Apply Now <span className="sr-only">for the <em>cash</em>Rewards card.</span></a>
+								<a href="/loans-cards/credit-cards/cash-rewards/" className="compare-top__item-link compare-top__item-details-link">Card Details <span className="sr-only">for the <em>cash</em>Rewards card.</span></a>
 							</div>
-							<button className="compare-top__item-close-button" aria-label="Remove the <em>cash</em>Rewards Credit Card from the Compare Results page"><i className="icon-close-solid" aria-hidden="true"></i></button>
+							<button className="compare-top__item-close-button" aria-label="Remove the <em>cash</em>Rewards Credit Card from the Compare Results page">
+								{/* <i className="icon-close-solid" aria-hidden="true"></i> */}
+								<FontAwesomeIcon icon={faTimesCircle} />
+							</button>
 						</div>
 					</div>
 
@@ -38,10 +43,13 @@ function CompareTop() {
 								<span className="compare-top__item-title">More Rewards</span>
 							</a>
 							<div className="compare-top__item-ctas">
-								<a href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC07" className="compare-top__item-button btn btn_center">Apply Now <span className="sr-only">for the More Rewards card.</span></a>
-								<a href="/loans-cards/credit-cards/more-rewards/" className="compare-top__item-details-link">Card Details <span className="sr-only">for the More Rewards card.</span></a>
+								<a href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC07" className="compare-top__item-link compare-top__item-button btn btn_center">Apply Now <span className="sr-only">for the More Rewards card.</span></a>
+								<a href="/loans-cards/credit-cards/more-rewards/" className="compare-top__item-link compare-top__item-details-link">Card Details <span className="sr-only">for the More Rewards card.</span></a>
 							</div>
-							<button className="compare-top__item-close-button" aria-label="Remove the More Rewards Amex Credit Card from the Compare Results page"><i className="icon-close-solid" aria-hidden="true"></i></button>
+							<button className="compare-top__item-close-button" aria-label="Remove the <em>cash</em>Rewards Credit Card from the Compare Results page">
+								{/* <i className="icon-close-solid" aria-hidden="true"></i> */}
+								<FontAwesomeIcon icon={faTimesCircle} />
+							</button>
 						</div>
 					</div>
 
@@ -55,10 +63,13 @@ function CompareTop() {
 								<span className="compare-top__item-title"><em>n</em>Rewards® Secured</span>
 							</a>
 							<div className="compare-top__item-ctas">
-								<a href="#nrewards-modal" className="compare-top__item-button btn btn_center original-nrewards-link" data-href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC03" data-modal="true">Apply Now <span className="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
-								<a href="/loans-cards/credit-cards/nrewards-secured/" className="compare-top__item-details-link">Card Details <span className="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
+								<a href="#nrewards-modal" className="compare-top__item-link compare-top__item-button btn btn_center original-nrewards-link" data-href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC03" data-modal="true">Apply Now <span className="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
+								<a href="/loans-cards/credit-cards/nrewards-secured/" className="compare-top__item-link compare-top__item-details-link">Card Details <span className="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
 							</div>
-							<button className="compare-top__item-close-button" aria-label="Remove the nRewards® Secured card from the Compare Results page"><i className="icon-close-solid" aria-hidden="true"></i></button>
+							<button className="compare-top__item-close-button" aria-label="Remove the <em>cash</em>Rewards Credit Card from the Compare Results page">
+								{/* <i className="icon-close-solid" aria-hidden="true"></i> */}
+								<FontAwesomeIcon icon={faTimesCircle} />
+							</button>
 						</div>
 					</div>
 

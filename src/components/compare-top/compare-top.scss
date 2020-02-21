@@ -1,14 +1,14 @@
+// Temporary Variables
+$blue: #0667BA;
+
 .compare-top {
-	background: pink;
+	// background: pink;
+	border: 3px solid black;
 	text-align: center;
 
-	&__wrapper {
+	&__inner-wrapper {
 		display: flex;
 		justify-content: space-evenly;
-	}
-
-	a {
-		text-decoration: none;
 	}
 
 	&__item-image {
@@ -16,6 +16,40 @@
 		min-width: 94px;
 		max-width: 210px;
 		border-radius: 3px;
+	}
+
+	&__item-link {
+		display: block;
+		text-decoration: none;
+		color: $blue;
+	}
+
+	&__item-button {
+		padding: 1rem 2.4rem;
+		font-size: 20px;
+		margin-bottom: 0.5em;
+		color: #fff;
+		background-color: #ED780F;
+		text-align: center;
+		line-height: 1.2;
+		border-radius: 6px;
+		font-weight: 600;
+		cursor: pointer;
+		text-shadow: 0 0 2px rgba(54, 28, 4, 0.95);
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+		display: table;
+		width: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__item-close-button {
+		background: none;
+		border: none;
+		-webkit-appearance: button;
+		cursor: pointer;
+		font-size: 2em;
+		color: $blue;
 	}
 
 }
