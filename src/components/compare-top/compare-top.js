@@ -15,7 +15,7 @@ function CompareTop() {
 
 					<div className="compare-top__item" data-cardid="cashrewards" role="listitem">
 						<div className="compare-top__item-wrapper">
-							<figure>
+							<figure className="compare-top__item-img-wrapper">
 								<img alt="" className="compare-top__item-image" src={cashRewardsImg} />
 							</figure>
 
@@ -35,7 +35,7 @@ function CompareTop() {
 
 					<div className="compare-top__item" data-cardid="morerewards" role="listitem">
 						<div className="compare-top__item-wrapper">
-							<figure>
+							<figure className="compare-top__item-img-wrapper">
 								<img alt="" className="compare-top__item-image" src={amexImg} />
 							</figure>
 
@@ -55,7 +55,7 @@ function CompareTop() {
 
 					<div className="compare-top__item" data-cardid="nrewards" role="listitem">
 						<div className="compare-top__item-wrapper">
-							<figure>
+							<figure className="compare-top__item-img-wrapper">
 								<img alt="" className="compare-top__item-image" src={nRewardsImg} />
 							</figure>
 
@@ -90,7 +90,7 @@ function CompareTop() {
 
 				</div>
 			</div>
-		</div>
+		</div >
 	);
 }
 
