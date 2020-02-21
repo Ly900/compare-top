@@ -11,6 +11,7 @@ $large: 994px;
 }
 
 .compare-top {
+	$imgShowsScreenSize: 800px;
 	// background: pink;
 	border-bottom: 3px solid black;
 	text-align: center;
@@ -34,7 +35,11 @@ $large: 994px;
 
 	&__item-img-wrapper {
 		margin: 0.375em auto 1.5em;
-		display: table;
+		display: none;
+
+		@media only screen and (min-height: $imgShowsScreenSize) {
+			display: table;
+		}
 	}
 
 	&__item-img {
@@ -110,6 +115,7 @@ $large: 994px;
 		font-size: 24px;
 		color: $blue;
 		transition: .5s;
+		display: none;
 
 		@include respond-min($medium) {
 			right: -32px;
@@ -120,6 +126,11 @@ $large: 994px;
 		@include respond-min($large) {
 			right: -45px;
 		}
+
+		@media only screen and (min-height: $imgShowsScreenSize) {
+			display: block;
+		}
+
 	}
 
 	// Styling for when the images are hidden.
