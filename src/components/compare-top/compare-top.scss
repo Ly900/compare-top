@@ -13,10 +13,20 @@ $medium: 780px;
 	// background: pink;
 	border: 3px solid black;
 	text-align: center;
+	padding: 1em;
 
 	&__inner-wrapper {
 		display: flex;
 		justify-content: space-evenly;
+	}
+
+	&__item-wrapper {
+		position: relative;
+		padding-top: 3em;
+
+		@include respond-min($medium) {
+			padding-top: 0;
+		}
 	}
 
 	&__item-img-wrapper {
@@ -36,13 +46,17 @@ $medium: 780px;
 		text-decoration: none;
 		color: $blue;
 		margin-bottom: .5em;
+
+		@include respond-min($medium) {
+			font-size: 20px;
+		}
 	}
 
 	&__item-title {
 		// margin-bottom: 1em;
 	}
 
-	&__item-button {
+	&__item-apply-button {
 		padding: .8rem 1rem;
 		min-width: 80px;
 		font-size: 16px;
@@ -67,13 +81,27 @@ $medium: 780px;
 		margin-right: auto;
 	}
 
+	&__item-details-link {
+		font-size: 16px;
+	}
+
 	&__item-close-button {
+		position: absolute;
+		top: 12px;
+		right: 8px;
 		background: none;
 		border: none;
 		-webkit-appearance: button;
 		cursor: pointer;
-		font-size: 2em;
+		font-size: 24px;
 		color: $blue;
+		transition: .5s;
+
+		@include respond-min($medium) {
+			right: -20px;
+			top: -5px;
+			font-size: 30px;
+		}
 	}
 
 }

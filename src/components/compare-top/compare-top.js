@@ -23,7 +23,7 @@ function CompareTop() {
 								<span className="compare-top__item-title"><em>cash</em>Rewards</span>
 							</a>
 							<div className="compare-top__item-ctas">
-								<a href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC01" className="compare-top__item-link compare-top__item-button btn btn_center">Apply Now <span className="sr-only">for the <em>cash</em>Rewards card.</span></a>
+								<a href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC01" className="compare-top__item-link compare-top__item-apply-button btn btn_center">Apply Now <span className="sr-only">for the <em>cash</em>Rewards card.</span></a>
 								<a href="/loans-cards/credit-cards/cash-rewards/" className="compare-top__item-link compare-top__item-details-link">Card Details <span className="sr-only">for the <em>cash</em>Rewards card.</span></a>
 							</div>
 							<button className="compare-top__item-close-button" aria-label="Remove the <em>cash</em>Rewards Credit Card from the Compare Results page">
@@ -43,7 +43,7 @@ function CompareTop() {
 								<span className="compare-top__item-title">More Rewards</span>
 							</a>
 							<div className="compare-top__item-ctas">
-								<a href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC07" className="compare-top__item-link compare-top__item-button btn btn_center">Apply Now <span className="sr-only">for the More Rewards card.</span></a>
+								<a href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC07" className="compare-top__item-link compare-top__item-apply-button btn btn_center">Apply Now <span className="sr-only">for the More Rewards card.</span></a>
 								<a href="/loans-cards/credit-cards/more-rewards/" className="compare-top__item-link compare-top__item-details-link">Card Details <span className="sr-only">for the More Rewards card.</span></a>
 							</div>
 							<button className="compare-top__item-close-button" aria-label="Remove the <em>cash</em>Rewards Credit Card from the Compare Results page">
@@ -60,10 +60,10 @@ function CompareTop() {
 							</figure>
 
 							<a className="compare-top__item-link" href="/loans-cards/credit-cards/nrewards-secured/">
-								<span className="compare-top__item-title"><em>n</em>Rewards® Secured</span>
+								<span className="compare-top__item-title"><em>n</em>Rewards</span>
 							</a>
 							<div className="compare-top__item-ctas">
-								<a href="#nrewards-modal" className="compare-top__item-link compare-top__item-button btn btn_center original-nrewards-link" data-href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC03" data-modal="true">Apply Now <span className="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
+								<a href="#nrewards-modal" className="compare-top__item-link compare-top__item-apply-button btn btn_center original-nrewards-link" data-href="https://myaccounts.navyfederal.org/NFCU/accountservices/ifse?id=creditcardapplication&amp;ProductID=NFCC03" data-modal="true">Apply Now <span className="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
 								<a href="/loans-cards/credit-cards/nrewards-secured/" className="compare-top__item-link compare-top__item-details-link">Card Details <span className="sr-only">for the <em>n</em>Rewards® Secured card.</span></a>
 							</div>
 							<button className="compare-top__item-close-button" aria-label="Remove the <em>cash</em>Rewards Credit Card from the Compare Results page">
@@ -81,7 +81,7 @@ function CompareTop() {
 								<span className="compare-top__item-title item-title_text_empty">- Empty -</span>
 							</div>
 							<div className="compare-top__item-ctas">
-								<a href="#compare-card-trigger" data-modal="true" className="compare-top__item-button btn btn_center btn_tertiary" aria-label="Add a card" name="button">Add <span className="text_show-for-small-up show-for-medium-up">A </span> Card</a>
+								<a href="#compare-card-trigger" data-modal="true" className="compare-top__item-apply-button btn btn_center btn_tertiary" aria-label="Add a card" name="button">Add <span className="text_show-for-small-up show-for-medium-up">A </span> Card</a>
 								<a href="#" className="compare-top__item-details-link item-details-link_display_hidden" aria-hidden="true">Card Details</a>
 							</div>
 						</div>
