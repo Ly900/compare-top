@@ -1,6 +1,7 @@
 // Temporary Variables
 $blue: #0667BA;
 $medium: 780px;
+$large: 994px;
 
 // Temporary Mixins
 @mixin respond-min($screenWidth) {
@@ -18,6 +19,9 @@ $medium: 780px;
 	&__inner-wrapper {
 		display: flex;
 		justify-content: space-evenly;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 74.375em;
 	}
 
 	&__item-wrapper {
@@ -39,6 +43,10 @@ $medium: 780px;
 		min-width: 94px;
 		max-width: 210px;
 		border-radius: 3px;
+
+		@include respond-min($medium) {
+			width: 90%;
+		}
 	}
 
 	&__item-link {
@@ -53,20 +61,15 @@ $medium: 780px;
 	}
 
 	&__item-title {
-		// margin-bottom: 1em;
+		@include respond-min($large) {
+			font-size: 24px;
+		}
 	}
 
 	&__item-apply-button {
 		padding: .8rem 1rem;
 		min-width: 80px;
 		font-size: 16px;
-
-		@include respond-min($medium) {
-			padding: 1rem 2.4rem;
-			width: auto;
-		}
-
-		margin-bottom: 0.5em;
 		color: #fff;
 		background-color: #ED780F;
 		text-align: center;
@@ -77,8 +80,16 @@ $medium: 780px;
 		text-shadow: 0 0 2px rgba(54, 28, 4, 0.95);
 		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
 		display: table;
-		margin-left: auto;
-		margin-right: auto;
+		margin: 0 auto .5em auto;
+
+		@include respond-min($medium) {
+			padding: 1rem 2.4rem;
+			width: auto;
+		}
+
+		@include respond-min($large) {
+			font-size: 20px;
+		}
 	}
 
 	&__item-details-link {
@@ -98,9 +109,13 @@ $medium: 780px;
 		transition: .5s;
 
 		@include respond-min($medium) {
-			right: -20px;
+			right: -32px;
 			top: -5px;
 			font-size: 30px;
+		}
+
+		@include respond-min($large) {
+			right: -45px;
 		}
 	}
 
