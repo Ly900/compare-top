@@ -1,8 +1,21 @@
 .compare-top {
 	background: pink;
+	text-align: center;
 
 	&__wrapper {
 		display: flex;
 		justify-content: space-evenly;
 	}
+
+	a {
+		text-decoration: none;
+	}
+
+	&__item-image {
+		width: 100%;
+		min-width: 94px;
+		max-width: 210px;
+		border-radius: 3px;
+	}
+
 }
