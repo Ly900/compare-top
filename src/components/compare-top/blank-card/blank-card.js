@@ -4,10 +4,11 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import blankCardImg from './blank-card.svg';
 import '../../compare-top/compare-top.scss';
 
-function BlankCard() {
+const BlankCard = () => {
 	return (
 
 		<div className="compare-top__item" data-cardid="nrewards" role="listitem">
+			{/* {console.log('inside blank-card.js')} */}
 			<div className="compare-top__item-wrapper">
 				<figure className="compare-top__item-img-wrapper">
 					<img alt="" className="compare-top__item-img" src={blankCardImg} />

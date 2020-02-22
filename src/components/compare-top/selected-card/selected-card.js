@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import '../../compare-top/compare-top.scss';
 
-function SelectedCard() {
+const SelectedCard = () => {
 	return (
 
 		<div className="compare-top__item" data-cardid="nrewards" role="listitem">
+			{/* {console.log('inside selected-card.js')} */}
 			<div className="compare-top__item-wrapper">
 				<figure className="compare-top__item-img-wrapper">
 					<img alt="" className="compare-top__item-img" src="http://placebear.com/496/312" />
