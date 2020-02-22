@@ -5,9 +5,12 @@ import './blank-card/blank-card.scss';
 import '../../utils/utils.js';
 import SelectedCard from './selected-card/selected-card.js';
 import BlankCard from './blank-card/blank-card.js';
-import { sayHi } from '../../utils/utils.js';
+import { sayHi, parseQueryString } from '../../utils/utils.js';
 
 const CompareTop = () => {
+
+	// const pids = getParameterByName('pid');
+	const pids2 = parseQueryString('pid');
 
 	return (
 		<div className="compare-top__outer-wrapper">
@@ -21,7 +24,11 @@ const CompareTop = () => {
 
 					<BlankCard />
 
-					{sayHi()}
+					{/* {sayHi()} */}
+
+					{/* {console.log(pids)} */}
+
+					{/* {console.log(pids2)} */}
 
 				</div>
 			</div>
