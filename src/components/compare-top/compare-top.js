@@ -1,12 +1,17 @@
 import React from 'react';
-import '../compare-top/compare-top.scss';
 import '../../utils/utils.scss';
+import '../compare-top/compare-top.scss';
+import './blank-card/blank-card.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
+const cat = "Simba";
+
 function CompareTop() {
+
 	return (
 		<div className="compare-top__outer-wrapper">
+			<h2>{cat}</h2>
 			<div className="compare-top" role="region" aria-label="Credit Card Compare Tool">
 				<div className="compare-top__inner-wrapper" role="list">
 
@@ -24,7 +29,6 @@ function CompareTop() {
 								<a href="cat1.html" className="compare-top__item-link compare-top__item-details-link">Details<span className="sr-only">for Cat No. 1</span></a>
 							</div>
 							<button className="compare-top__item-close-button" aria-label="Remove the Cat No. 1 from the Compare Results page">
-								{/* <i className="icon-close-solid" aria-hidden="true"></i> */}
 								<FontAwesomeIcon icon={faTimesCircle} />
 							</button>
 						</div>
@@ -44,7 +48,6 @@ function CompareTop() {
 								<a href="cat2.html" className="compare-top__item-link compare-top__item-details-link">Details<span className="sr-only">for Cat No. 2</span></a>
 							</div>
 							<button className="compare-top__item-close-button" aria-label="Remove the Cat No. 2 from the Compare Results page">
-								{/* <i className="icon-close-solid" aria-hidden="true"></i> */}
 								<FontAwesomeIcon icon={faTimesCircle} />
 							</button>
 						</div>
@@ -64,7 +67,6 @@ function CompareTop() {
 								<a href="bear1.html" className="compare-top__item-link compare-top__item-details-link">Details<span className="sr-only"> for the Bear</span></a>
 							</div>
 							<button className="compare-top__item-close-button" aria-label="Remove the Bear from the Compare Results page">
-								{/* <i className="icon-close-solid" aria-hidden="true"></i> */}
 								<FontAwesomeIcon icon={faTimesCircle} />
 							</button>
 						</div>
