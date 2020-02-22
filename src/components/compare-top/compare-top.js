@@ -4,8 +4,6 @@ import '../compare-top/compare-top.scss';
 import './blank-card/blank-card.scss';
 import SelectedCard from './selected-card/selected-card.js';
 import BlankCard from './blank-card/blank-card.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 function CompareTop() {
 
