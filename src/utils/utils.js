@@ -8,14 +8,16 @@ export const getParameterByName = (name) => {
 }
 
 // Returns array of PIDs from the URL query string.
-export const parseQueryString = (variable) => {
+export const getPIDValues = () => {
+	let pidVals = [];
 	const query = window.location.search.substring(1);
 	// console.log(query) // pid=nrewards&pid=cashrewards&pid=morerewards
 	const vars = query.split("&");
 	// console.log(vars) // [ 'pid=nrewards', 'pid=cashrewards', 'pid=morerewards' ]
-	const values = vars.map((parameter) => {
+	pidVals = vars.map((parameter) => {
 		return parameter.substr((parameter.lastIndexOf('=')) + 1);
 	});
-	console.log(values); // [ 'nrewards', 'cashrewards', 'morerewards' ]
+	// console.log(pidVals); // [ 'nrewards', 'cashrewards', 'morerewards' ]
+	return pidVals;
 }
 
