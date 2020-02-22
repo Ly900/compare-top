@@ -2,19 +2,18 @@ import React from 'react';
 import '../../utils/utils.scss';
 import '../compare-top/compare-top.scss';
 import './blank-card/blank-card.scss';
+import BlankCard from './blank-card/blank-card.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-
-const cat = "Simba";
 
 function CompareTop() {
 
 	return (
 		<div className="compare-top__outer-wrapper">
-			<h2>{cat}</h2>
 			<div className="compare-top" role="region" aria-label="Credit Card Compare Tool">
 				<div className="compare-top__inner-wrapper" role="list">
 
+					{ /*
 					<div className="compare-top__item" data-cardid="cashrewards" role="listitem">
 						<div className="compare-top__item-wrapper">
 							<figure className="compare-top__item-img-wrapper">
@@ -53,6 +52,8 @@ function CompareTop() {
 						</div>
 					</div>
 
+					*/}
+
 					<div className="compare-top__item" data-cardid="nrewards" role="listitem">
 						<div className="compare-top__item-wrapper">
 							<figure className="compare-top__item-img-wrapper">
@@ -72,7 +73,12 @@ function CompareTop() {
 						</div>
 					</div>
 
-					{/* Empty blank card to test later. }
+					<BlankCard />
+
+					<BlankCard />
+
+					{/* <BlankCard /> */}
+
 					{/* <div className="compare-top__item compare-top__item_blank-card" role="listitem">
 						<div className="compare-top__item-wrapper">
 							<div className="compare-top__item-link">
@@ -85,6 +91,7 @@ function CompareTop() {
 							</div>
 						</div>
 					</div> */}
+
 
 
 				</div>

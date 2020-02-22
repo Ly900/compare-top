@@ -3,6 +3,17 @@ $blue: #0667BA;
 $medium: 780px;
 $large: 994px;
 
+.btn {
+	background-color: #ED780F;
+}
+
+.btn_tertiary {
+	color: #fff;
+	background-color: #0667BA;
+	text-shadow: none;
+}
+
+
 // Temporary Mixins
 @mixin respond-min($screenWidth) {
 	@media (min-width:$screenWidth) {
@@ -11,6 +22,24 @@ $large: 994px;
 }
 
 .compare-top {
+	@mixin hidden() {
+		display: none;
+		visibility: hidden;
+	}
+
+	.hidden {
+		@include hidden();
+	}
+
+	@mixin display-none() {
+		display: none;
+		visibility: hidden;
+	}
+
+	@mixin visibility-hidden() {
+		visibility: hidden;
+	}
+
 	$imgShowsScreenSize: 800px;
 	// background: pink;
 	border-bottom: 3px solid black;
@@ -79,7 +108,6 @@ $large: 994px;
 		min-width: 80px;
 		font-size: 16px;
 		color: #fff;
-		background-color: #ED780F;
 		text-align: center;
 		line-height: 1.2;
 		border-radius: 6px;
@@ -131,6 +159,9 @@ $large: 994px;
 			display: block;
 		}
 
+		&_display_none {
+			@include display-none();
+		}
 	}
 
 	// Styling for when the images are hidden.
