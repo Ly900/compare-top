@@ -8,16 +8,13 @@ export const getParameterByName = (name) => {
 }
 
 // Returns array of PIDs from the URL query string.
+// Example: http://localhost:3000/?pid=nrewards&pid=cashrewards&pid=morerewards => [ 'nrewards', 'cashrewards', 'morerewards' ]
 export const getPIDValues = () => {
-	let pidVals = [];
-	const query = window.location.search.substring(1);
-	// console.log(query) // pid=nrewards&pid=cashrewards&pid=morerewards
-	const vars = query.split("&");
-	// console.log(vars) // [ 'pid=nrewards', 'pid=cashrewards', 'pid=morerewards' ]
-	pidVals = vars.map((parameter) => {
-		return parameter.substr((parameter.lastIndexOf('=')) + 1);
-	});
-	// console.log(pidVals); // [ 'nrewards', 'cashrewards', 'morerewards' ]
+	let pidVals;
+	const query = window.location.search.substring(1); // pid=nrewards&pid=cashrewards&pid=morerewards
+	const vars = query.split("&"); // [ 'pid=nrewards', 'pid=cashrewards', 'pid=morerewards' ]
+	pidVals = vars.map(parameter => parameter.split('=')[1]); // [ 'nrewards', 'cashrewards', 'morerewards' ]
 	return pidVals;
 }
+
 

@@ -11,7 +11,7 @@ const CompareTop = () => {
 
 	// const pids = getParameterByName('pid');
 	const pids = getPIDValues();
-	console.log(pids);
+	// console.log(pids);
 
 	return (
 		<div className="compare-top__outer-wrapper">
@@ -25,7 +25,7 @@ const CompareTop = () => {
 
 					<BlankCard />
 
-					{/* {console.log(pids)} */}
+					{console.log(pids)}
 
 					{/* {console.log(pids2)} */}
 
