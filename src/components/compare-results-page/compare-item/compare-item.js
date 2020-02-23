@@ -31,7 +31,7 @@ const CompareItem = (props) => {
 					{ /* Use a button if there is no Apply Now button */
 						itemIsEmpty &&
 
-						<button className="compare-top__item-link compare-top__item-apply-button btn btn_center btn_tertiary" >Add an Animal</button>
+						<button className="compare-top__item-link compare-top__item-apply-button btn btn_center btn_tertiary" >Add Animal</button>
 
 					}
 
