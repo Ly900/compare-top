@@ -3,19 +3,19 @@
 		"productName": "Cat No. 1",
 		"applicationURL": "cat1.html",
 		"productPageURL": "cat1/adopt.html",
-		"cardArt": "cashrewards.svg"
+		"cardArt": "http://placekitten.com/496/312"
 	},
 	{
 		"productId": "cat2",
 		"productName": "Cat No. 2",
 		"applicationURL": "cat2.html",
-		"productPageURL": "cat1/adopt.html",
-		"cardArt": "morerewards.svg"
+		"productPageURL": "cat2/adopt.html",
+		"cardArt": "http://placekitten.com/g/496/312"
 	},
 	{
 		"productId": "bear1",
 		"productName": "Bear No. 1",
-		"applicationURL": "cat3.html",
+		"applicationURL": "bear1.html",
 		"productPageURL": "bear1/adopt.html",
 		"cardArt": "http://placebear.com/496/312"
 	}

@@ -3,7 +3,7 @@ import '../../utils/utils.scss';
 import '../compare-top/compare-top.scss';
 import './blank-card/blank-card.scss';
 import '../../utils/utils.js';
-import SelectedCard from './selected-card/selected-card.js';
+import CompareItem from './compare-item/compare-item.js';
 import BlankCard from './blank-card/blank-card.js';
 import { getPIDValues } from '../../utils/utils.js';
 import JSONData from '../../cats.json';
@@ -34,16 +34,12 @@ class CompareTop extends React.Component {
 	componentDidMount() {
 		const pids = getPIDValues();
 		let matches;
-		// console.log("pids: ", pids);
-		// console.log("JSONData: ", JSONData);
 		matches = this.getMatches(pids);
 		console.log("matches: ", matches);
 		this.setState(() => ({
 			loading: false,
 			items: matches
 		}));
-		// console.log("matches: ", matches);
-		// console.log("this.state.items: ", this.state.items);
 	}
 
 	render() {
@@ -54,24 +50,19 @@ class CompareTop extends React.Component {
 
 		return (
 			<div className="compare-top__outer-wrapper">
-				{/* {console.log('inside compare-top.js')} */}
 				<div className="compare-top" role="region" aria-label="Credit Card Compare Tool">
 					<div className="compare-top__inner-wrapper" role="list">
 
-						<SelectedCard />
+						{
+							this.state.items.map((item, index) => {
+								return <CompareItem key={index} match={item} />
+							})
+						}
 
-						<BlankCard />
-
-						<BlankCard />
 
 					</div>
 				</div>
-				{
-					this.state.items.map((item, index) => {
-						return <h1 key={index}>{item.productId}</h1>
-					})
-				}
-				{/* {this.state.items} */}
+
 			</div >
 		);
 	}
