@@ -6,12 +6,15 @@ import '../../compare-top/compare-top.scss';
 const CompareItem = (props) => {
 
 	const compareItem = props.match;
+	// console.log(compareItem);
+	const itemIsEmpty = Object.keys(compareItem).length === 0 && compareItem.constructor === Object;
+	console.log(itemIsEmpty);
+
 
 	return (
 
-		<div className="compare-top__item" data-cardid={compareItem.productId} role="listitem">
-			{/* {console.log('inside selected-card.js')} */}
-			<div className="compare-top__item-wrapper">
+		<div className={`compare-top__item" ${!itemIsEmpty ? `data-cardid="${compareItem.productName}` : ''}`} role="listitem" >
+			< div className="compare-top__item-wrapper" >
 				<figure className="compare-top__item-img-wrapper">
 					<img alt="" className="compare-top__item-img" src={compareItem.cardArt} />
 				</figure>
@@ -26,7 +29,7 @@ const CompareItem = (props) => {
 				<button className="compare-top__item-close-button" aria-label={`Remove the ${compareItem.productName} from the Compare Results page`}>
 					<FontAwesomeIcon icon={faTimesCircle} />
 				</button>
-			</div>
+			</div >
 		</div >
 
 	)
