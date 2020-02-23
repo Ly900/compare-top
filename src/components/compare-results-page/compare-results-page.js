@@ -28,7 +28,7 @@ class CompareResultsPage extends React.Component {
 
 
 	componentDidMount() {
-		console.log("component mounted");
+		// console.log("component mounted");
 		const options = this.getOptionsFromJSON();
 		this.setState(() => ({
 			loading: false,
@@ -67,7 +67,7 @@ class CompareResultsPage extends React.Component {
 
 		return (
 			<div>
-				<CompareTop />
+				<CompareTop selectedItemsToRender={this.state.selectedItemsToRender} />
 				<p className="test">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
 					aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

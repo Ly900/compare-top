@@ -10,7 +10,7 @@ class CompareTop extends React.Component {
 		super(props);
 		this.state = {
 			loading: true,
-			items: null
+			itemsToRender: [null, null, null]
 		}
 	}
 
@@ -29,14 +29,16 @@ class CompareTop extends React.Component {
 	}
 
 	componentDidMount() {
+		// console.log("component did mount");
+
 		const pids = getPIDValues();
-		let matches;
-		matches = this.getMatches(pids);
+		let matches = this.getMatches(pids);
 		// console.log("matches: ", matches);
 		this.setState(() => ({
-			loading: false,
-			items: matches
+			loading: false
 		}));
+		// console.log("to render: ", this.props.selectedItemsToRender);
+
 	}
 
 	render() {
@@ -45,15 +47,28 @@ class CompareTop extends React.Component {
 			return <div>Loading...</div>;
 		}
 
+		// console.log("this.props.selectedItemsToRender: ", this.props.selectedItemsToRender);
+
+
 		return (
 			<div className="compare-top__outer-wrapper">
 				<div className="compare-top" role="region" aria-label="Credit Card Compare Tool">
 					<div className="compare-top__inner-wrapper" role="list">
 
-						{
-							this.state.items.map((item, index) => {
+						{/* {
+							this.state.selectedItemsToRender.map((item, index) => {
 								return <CompareItem key={index} match={item} />
 							})
+						} */}
+
+						{
+							this.state.itemsToRender.map((item, index) => {
+								return <CompareItem key={index} item={item} selectedItemsToRender={this.props.selectedItemsToRender} />
+							})
+						}
+
+						{
+							// <CompareItem itemsToRender={this.state.itemsToRender} />
 						}
 
 					</div>
