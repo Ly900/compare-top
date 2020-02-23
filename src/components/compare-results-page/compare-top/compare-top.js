@@ -1,10 +1,9 @@
 import React from 'react';
-import '../../utils/utils.scss';
+import '../../../utils/utils.scss';
 import '../compare-top/compare-top.scss';
-import '../../utils/utils.js';
-import CompareItem from './compare-item/compare-item.js';
-import { getPIDValues } from '../../utils/utils.js';
-import JSONData from '../../cats.json';
+import CompareItem from '../compare-item/compare-item.js';
+import { getPIDValues } from '../../../utils/utils.js';
+import JSONData from '../../../cats.json';
 
 class CompareTop extends React.Component {
 	constructor(props) {

@@ -1,11 +1,11 @@
 import React from 'react';
 // import logo from '../../images/logo.svg';
 import './app.scss';
-import CompareTop from '../compare-top/compare-top.js';
+import CompareResultsPage from '../compare-results-page/compare-results-page.js';
 
 function App() {
   return (
-    <CompareTop />
+    <CompareResultsPage />
   );
 }
 
