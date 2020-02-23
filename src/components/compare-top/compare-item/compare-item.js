@@ -9,11 +9,11 @@ const CompareItem = (props) => {
 	// console.log(compareItem);
 	const itemIsEmpty = Object.keys(compareItem).length === 0 && compareItem.constructor === Object;
 	console.log(itemIsEmpty);
-
+	const dataCardId = `data-cardid=\"${compareItem.productName}\"`;
 
 	return (
 
-		<div className={`compare-top__item" ${!itemIsEmpty ? `data-cardid="${compareItem.productName}` : ''}`} role="listitem" >
+		<div className="compare-top__item" data-cardid={compareItem.productName} role="listitem" >
 			< div className="compare-top__item-wrapper" >
 				<figure className="compare-top__item-img-wrapper">
 					<img alt="" className="compare-top__item-img" src={compareItem.cardArt} />
