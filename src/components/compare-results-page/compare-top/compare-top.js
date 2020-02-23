@@ -32,7 +32,7 @@ class CompareTop extends React.Component {
 		const pids = getPIDValues();
 		let matches;
 		matches = this.getMatches(pids);
-		console.log("matches: ", matches);
+		// console.log("matches: ", matches);
 		this.setState(() => ({
 			loading: false,
 			items: matches

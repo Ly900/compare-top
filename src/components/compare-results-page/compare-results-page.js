@@ -6,15 +6,31 @@ import CompareTop from './compare-top/compare-top.js';
 import CompareModal from './compare-modal/compare-modal.js';
 // import CompareItem from './compare-item/compare-item.js';
 // import { getPIDValues } from '../../utils/utils.js';
-// import JSONData from '../../cats.json';
+import JSONData from '../../cats.json';
 
 class CompareResultsPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			loading: true,
-			items: null
+			checkBoxItems: null
 		}
+	}
+
+	getOptionsFromJSON() {
+		const options = JSONData.map((option) => {
+			return option;
+		})
+		return options;
+	}
+
+	componentDidMount() {
+		console.log("component mounted");
+		const options = this.getOptionsFromJSON();
+		this.setState(() => ({
+			loading: false,
+			checkBoxItems: options
+		}))
 	}
 
 	render() {
@@ -34,11 +50,10 @@ class CompareResultsPage extends React.Component {
 					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
 					sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   			</p>
-				<CompareModal />
+				<CompareModal loading={this.state.loading} checkBoxItems={this.state.checkBoxItems} />
 			</div>
 		);
 	}
-
 
 }
 

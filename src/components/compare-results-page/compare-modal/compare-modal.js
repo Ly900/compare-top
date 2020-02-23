@@ -3,7 +3,7 @@ import React from 'react';
 // import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 // import '../../compare-top/compare-top.scss';
 // import blankCard from './blank-card.svg';
-import JSONData from '../../../cats.json';
+// import JSONData from '../../../cats.json';
 
 class CompareModal extends React.Component {
 
@@ -15,23 +15,6 @@ class CompareModal extends React.Component {
 		}
 	}
 
-	// getOptionsFromJSON() {
-	// 	return options = JSONData.map((option) => {
-	// 		// console.log("option: ", option);
-	// 	})
-	// }
-
-	componentDidMount() {
-		console.log("component mounted");
-		const options = JSONData.map((option) => {
-			return option;
-		})
-		this.setState(() => ({
-			loading: false,
-			checkBoxItems: options
-		}))
-	}
-
 	onSubmit(e) {
 		e.preventDefault();
 		console.log("form submitted");
@@ -40,7 +23,7 @@ class CompareModal extends React.Component {
 
 	render() {
 
-		if (this.state.loading) {
+		if (this.props.loading) {
 			return <div>Loading...</div>;
 		}
 
@@ -48,7 +31,7 @@ class CompareModal extends React.Component {
 
 			<form onSubmit={this.onSubmit}>
 				{
-					this.state.checkBoxItems.map((item, index) => {
+					this.props.checkBoxItems.map((item, index) => {
 						return (
 							<div key={item.productId}>
 								<input type="checkbox" name={item.productName} value={item.productName} />
