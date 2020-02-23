@@ -13,7 +13,9 @@ class CompareResultsPage extends React.Component {
 		super(props);
 		this.state = {
 			loading: true,
-			checkBoxItems: null
+			checkBoxItems: null,
+			selectedItemIds: [],
+			selectedItemsToRender: []
 		}
 	}
 
@@ -24,12 +26,40 @@ class CompareResultsPage extends React.Component {
 		return options;
 	}
 
+
 	componentDidMount() {
 		console.log("component mounted");
 		const options = this.getOptionsFromJSON();
 		this.setState(() => ({
 			loading: false,
 			checkBoxItems: options
+		}))
+	}
+
+	checkItem(e) {
+		// console.log("item checked");
+		// console.log(e.target);
+		let updatedIdsList;
+		// If the checkbox was not already selected, add it to the array.
+		if (this.state.selectedItemIds.indexOf(e.target.id) === -1) {
+			updatedIdsList = this.state.selectedItemIds.concat(e.target.id);
+			// If the checkbox was already selected, remove it from the array.
+		} else {
+			updatedIdsList = this.state.selectedItemIds.filter((item) => {
+				return item !== e.target.id;
+			})
+		}
+		this.setState(() => ({
+			selectedItemIds: updatedIdsList
+		}))
+	}
+
+	onSubmit(e) {
+		e.preventDefault();
+		console.log("form submitted");
+		const updatedIdsList = this.state.selectedItemIds
+		this.setState(() => ({
+			selectedItemsToRender: updatedIdsList
 		}))
 	}
 
@@ -50,7 +80,13 @@ class CompareResultsPage extends React.Component {
 					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
 					sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   			</p>
-				<CompareModal loading={this.state.loading} checkBoxItems={this.state.checkBoxItems} />
+				<CompareModal
+					loading={this.state.loading}
+					checkBoxItems={this.state.checkBoxItems}
+					selectedItemIds={this.state.selectedItemIds}
+					selectedItemsToRender={this.state.selectedItemsToRender}
+					checkItem={(e) => this.checkItem(e)}
+					onSubmit={(e) => this.onSubmit(e)} />
 			</div>
 		);
 	}

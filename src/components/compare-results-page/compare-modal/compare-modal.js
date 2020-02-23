@@ -9,36 +9,6 @@ class CompareModal extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			loading: true,
-			selectedItemIds: []
-		}
-	}
-
-	checkItem(e) {
-		console.log("item checked");
-		console.log(e.target);
-		let updatedIdsList;
-		// If the checkbox was not already selected, add it to the array.
-		if (this.state.selectedItemIds.indexOf(e.target.id) === -1) {
-			updatedIdsList = this.state.selectedItemIds.concat(e.target.id);
-			// If the checkbox was already selected, remove it from the array.
-		} else {
-			updatedIdsList = this.state.selectedItemIds.filter((item) => {
-				return item !== e.target.id;
-			})
-		}
-		this.setState(() => ({
-			selectedItemIds: updatedIdsList
-		}))
-	}
-
-	onSubmit(e) {
-		e.preventDefault();
-		console.log("form submitted");
-		console.log(e.target);
-		// console.log("selected item ids: ", this.state.selectedItemIds);
-
 	}
 
 	render() {
@@ -49,7 +19,7 @@ class CompareModal extends React.Component {
 
 		return (
 
-			<form onSubmit={this.onSubmit}>
+			<form onSubmit={(e) => this.props.onSubmit(e)}>
 				{
 					this.props.checkBoxItems.map((item, index) => {
 						return (
@@ -58,7 +28,7 @@ class CompareModal extends React.Component {
 									id={item.productId}
 									name={item.productName}
 									value={item.productName}
-									onChange={(e) => this.checkItem(e)} />
+									onChange={(e) => this.props.checkItem(e)} />
 								<label >Add {item.productName} to Compare</label>
 							</div>
 						)
@@ -67,7 +37,7 @@ class CompareModal extends React.Component {
 				}
 				{
 
-					this.state.selectedItemIds.map((item) => {
+					this.props.selectedItemsToRender.map((item) => {
 						return <p key={item}>{item}</p>
 					})
 
