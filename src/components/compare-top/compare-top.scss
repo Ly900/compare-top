@@ -23,7 +23,6 @@ $large: 994px;
 
 .compare-top {
 	@mixin hidden() {
-		display: none;
 		visibility: hidden;
 	}
 
@@ -100,6 +99,10 @@ $large: 994px;
 	&__item-title {
 		@include respond-min($large) {
 			font-size: 24px;
+		}
+
+		&_empty-text {
+			color: #68696A;
 		}
 	}
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import '../../compare-top/compare-top.scss';
+import blankCard from './blank-card.svg';
 
 const CompareItem = (props) => {
 
@@ -16,12 +17,13 @@ const CompareItem = (props) => {
 		<div className="compare-top__item" data-cardid={compareItem.productName} role="listitem" >
 			< div className="compare-top__item-wrapper" >
 				<figure className="compare-top__item-img-wrapper">
-					<img alt="" className="compare-top__item-img" src={compareItem.cardArt} />
+					<img alt="" className="compare-top__item-img" src={!itemIsEmpty ? compareItem.cardArt : blankCard} />
 				</figure>
 
 				<a className="compare-top__item-link" href="bear.html">
-					<span className="compare-top__item-title">{compareItem.productName}</span>
+					<span className={`compare-top__item-title" ${itemIsEmpty && 'compare-top__item-title_empty-text'}`}>{!itemIsEmpty ? compareItem.productName : '--Empty--'}</span>
 				</a>
+
 				<div className="compare-top__item-ctas">
 					<a href={compareItem.applicationURL} className={`compare-top__item-link compare-top__item-apply-button btn btn_center ${itemIsEmpty && 'btn_tertiary'}`}>{itemIsEmpty ? 'Add an Animal' : 'Apply Now'} {!itemIsEmpty && <span className="sr-only">for a {compareItem.productName}</span>}</a>
 					<a href={compareItem.productPageURL} className="compare-top__item-link compare-top__item-details-link">Details<span className="sr-only"> for the {compareItem.productName}</span></a>

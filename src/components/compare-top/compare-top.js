@@ -1,10 +1,8 @@
 import React from 'react';
 import '../../utils/utils.scss';
 import '../compare-top/compare-top.scss';
-import './blank-card/blank-card.scss';
 import '../../utils/utils.js';
 import CompareItem from './compare-item/compare-item.js';
-import BlankCard from './blank-card/blank-card.js';
 import { getPIDValues } from '../../utils/utils.js';
 import JSONData from '../../cats.json';
 
