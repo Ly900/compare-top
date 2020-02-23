@@ -57,7 +57,6 @@ class CompareTop extends React.Component {
 							})
 						}
 
-
 					</div>
 				</div>
 

@@ -7,10 +7,7 @@ import blankCard from './blank-card.svg';
 const CompareItem = (props) => {
 
 	const compareItem = props.match;
-	// console.log(compareItem);
 	const itemIsEmpty = Object.keys(compareItem).length === 0 && compareItem.constructor === Object;
-	console.log(itemIsEmpty);
-	const dataCardId = `data-cardid=\"${compareItem.productName}\"`;
 
 	return (
 
@@ -20,15 +17,27 @@ const CompareItem = (props) => {
 					<img alt="" className="compare-top__item-img" src={!itemIsEmpty ? compareItem.cardArt : blankCard} />
 				</figure>
 
-				<a className="compare-top__item-link" href="bear.html">
+				<a className="compare-top__item-link" href={`${!itemIsEmpty ? compareItem.productPageURL : '#'}`} tab-index="0">
 					<span className={`compare-top__item-title" ${itemIsEmpty && 'compare-top__item-title_empty-text'}`}>{!itemIsEmpty ? compareItem.productName : '--Empty--'}</span>
 				</a>
 
 				<div className="compare-top__item-ctas">
-					<a href={compareItem.applicationURL} className={`compare-top__item-link compare-top__item-apply-button btn btn_center ${itemIsEmpty && 'btn_tertiary'}`}>{itemIsEmpty ? 'Add an Animal' : 'Apply Now'} {!itemIsEmpty && <span className="sr-only">for a {compareItem.productName}</span>}</a>
+
+					{ /* Use an anchor if there is an Apply Now button */
+						!itemIsEmpty && <a href={compareItem.applicationURL} className="compare-top__item-link compare-top__item-apply-button btn btn_center">Adopt Now<span className="sr-only"> a {compareItem.productName}</span></a>
+
+					}
+
+					{ /* Use a button if there is no Apply Now button */
+						itemIsEmpty &&
+
+						<button className="compare-top__item-link compare-top__item-apply-button btn btn_center btn_tertiary" >Add an Animal</button>
+
+					}
+
 					<a href={compareItem.productPageURL} className="compare-top__item-link compare-top__item-details-link">Details<span className="sr-only"> for the {compareItem.productName}</span></a>
 				</div>
-				<button className="compare-top__item-close-button" aria-label={`Remove the ${compareItem.productName} from the Compare Results page`}>
+				<button className={`compare-top__item-close-button ${itemIsEmpty && 'hidden'}`} aria-label={`Remove the ${compareItem.productName} from the Compare Results page`}>
 					<FontAwesomeIcon icon={faTimesCircle} />
 				</button>
 			</div >
