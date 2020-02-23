@@ -13,6 +13,13 @@
 		"cardArt": "http://placekitten.com/g/496/312"
 	},
 	{
+		"productId": "cat3",
+		"productName": "Cat No. 3",
+		"applicationURL": "cat3.html",
+		"productPageURL": "cat3/adopt.html",
+		"cardArt": "http://placekitten.com/g/496/312"
+	},
+	{
 		"productId": "bear1",
 		"productName": "Bear No. 1",
 		"applicationURL": "bear1.html",
