@@ -6,33 +6,76 @@ import '../../utils/utils.js';
 import SelectedCard from './selected-card/selected-card.js';
 import BlankCard from './blank-card/blank-card.js';
 import { getPIDValues } from '../../utils/utils.js';
+import JSONData from '../../cats.json';
 
-const CompareTop = () => {
+class CompareTop extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			loading: true,
+			items: null
+		}
+	}
 
-	// const pids = getParameterByName('pid');
-	const pids = getPIDValues();
-	// console.log(pids);
+	// Get objects from JSON file that match query string pids. Fill empty elements with "null" values to get an array of 3.
+	getMatches(pids) {
+		let itemsToShow = pids.map(pid => {
+			return JSONData.filter(item => {
+				return item.productId === pid;
+			})
+		})
+		itemsToShow = itemsToShow.flat().slice(0, 3);
+		while (itemsToShow.length < 3) {
+			itemsToShow.push({});
+		}
+		return itemsToShow;
+	}
 
-	return (
-		<div className="compare-top__outer-wrapper">
-			{/* {console.log('inside compare-top.js')} */}
-			<div className="compare-top" role="region" aria-label="Credit Card Compare Tool">
-				<div className="compare-top__inner-wrapper" role="list">
+	componentDidMount() {
+		const pids = getPIDValues();
+		let matches;
+		// console.log("pids: ", pids);
+		// console.log("JSONData: ", JSONData);
+		matches = this.getMatches(pids);
+		console.log("matches: ", matches);
+		this.setState(() => ({
+			loading: false,
+			items: matches
+		}));
+		// console.log("matches: ", matches);
+		// console.log("this.state.items: ", this.state.items);
+	}
 
-					<SelectedCard />
+	render() {
 
-					<BlankCard />
+		if (this.state.loading) {
+			return <div>Loading...</div>;
+		}
 
-					<BlankCard />
+		return (
+			<div className="compare-top__outer-wrapper">
+				{/* {console.log('inside compare-top.js')} */}
+				<div className="compare-top" role="region" aria-label="Credit Card Compare Tool">
+					<div className="compare-top__inner-wrapper" role="list">
 
-					{console.log(pids)}
+						<SelectedCard />
 
-					{/* {console.log(pids2)} */}
+						<BlankCard />
 
+						<BlankCard />
+
+					</div>
 				</div>
-			</div>
-		</div >
-	);
+				{
+					this.state.items.map((item, index) => {
+						return <h1 key={index}>{item.productId}</h1>
+					})
+				}
+				{/* {this.state.items} */}
+			</div >
+		);
+	}
+
 }
 
 export default CompareTop;
