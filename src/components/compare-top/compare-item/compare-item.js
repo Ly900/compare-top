@@ -23,7 +23,7 @@ const CompareItem = (props) => {
 					<span className="compare-top__item-title">{compareItem.productName}</span>
 				</a>
 				<div className="compare-top__item-ctas">
-					<a href={compareItem.applicationURL} className="compare-top__item-link compare-top__item-apply-button btn btn_center">Adopt Now<span className="sr-only"> {compareItem.productName}</span></a>
+					<a href={compareItem.applicationURL} className={`compare-top__item-link compare-top__item-apply-button btn btn_center ${itemIsEmpty && 'btn_tertiary'}`}>{itemIsEmpty ? 'Add an Animal' : 'Apply Now'} {!itemIsEmpty && <span className="sr-only">for a {compareItem.productName}</span>}</a>
 					<a href={compareItem.productPageURL} className="compare-top__item-link compare-top__item-details-link">Details<span className="sr-only"> for the {compareItem.productName}</span></a>
 				</div>
 				<button className="compare-top__item-close-button" aria-label={`Remove the ${compareItem.productName} from the Compare Results page`}>
