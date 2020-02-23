@@ -7,10 +7,6 @@ import React from 'react';
 
 class CompareModal extends React.Component {
 
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 
 		if (this.props.loading) {
@@ -37,8 +33,8 @@ class CompareModal extends React.Component {
 				}
 				{
 
-					this.props.selectedItemsToRender.map((item) => {
-						return <p key={item}>{item}</p>
+					this.props.selectedItemsToRender.map((item, index) => {
+						return <p key={index}>{item.productName}</p>
 					})
 
 				}

@@ -28,7 +28,6 @@ class CompareResultsPage extends React.Component {
 
 
 	componentDidMount() {
-		// console.log("component mounted");
 		const options = this.getOptionsFromJSON();
 		this.setState(() => ({
 			loading: false,
@@ -54,12 +53,31 @@ class CompareResultsPage extends React.Component {
 		}))
 	}
 
+	// Get objects from JSON file that match query string pids. Fill empty elements with "null" values to get an array of 3.
+	getMatchesFromJSON(ids) {
+		let itemsToShow = ids.map(id => {
+			return JSONData.filter(item => {
+				return item.productId === id;
+			})
+		})
+		itemsToShow = itemsToShow.flat().slice(0, 3);
+		while (itemsToShow.length < 3) {
+			itemsToShow.push({});
+		}
+		return itemsToShow;
+	}
+
 	onSubmit(e) {
 		e.preventDefault();
-		console.log("form submitted");
-		const updatedIdsList = this.state.selectedItemIds
+		// console.log("form submitted");
+		const updatedIdsList = this.state.selectedItemIds;
+		// console.log("updatedIdsList: ", updatedIdsList);
+
+		const matches = this.getMatchesFromJSON(updatedIdsList);
+		// console.log("matches: ", matches);
+
 		this.setState(() => ({
-			selectedItemsToRender: updatedIdsList
+			selectedItemsToRender: matches
 		}))
 	}
 
