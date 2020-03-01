@@ -88,7 +88,7 @@ class CompareModal extends React.Component {
 													name={item.productId}
 													value={item.productId}
 													onChange={(e) => this.checkItem(e)} />
-												<label className="compare-modal__checkbox-label" tabindex="-1" for={item.productId}>Add {item.productName} to Compare</label>
+												<label className="compare-modal__checkbox-label" tabIndex="-1" htmlFor={item.productId}>Add <span className="sr-only">{item.productName}</span> to Compare</label>
 											</div>
 										</div>
 									)
@@ -102,7 +102,9 @@ class CompareModal extends React.Component {
 							// })
 
 						}
-						<input type="submit" />
+						<div className="compare-modal__update-btn-wrapper">
+							<button type="submit" className="compare-modal__update-btn btn btn_tertiary btn_resp">Update</button>
+						</div>
 					</form>
 				</section>
 			</div>
