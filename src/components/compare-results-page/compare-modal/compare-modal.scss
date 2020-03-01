@@ -10,8 +10,19 @@ $large: 994px;
 	}
 }
 
+@mixin content-children() {
+	&> :first-child {
+		margin-top: 0;
+	}
+
+	&> :last-child {
+		margin-bottom: 0;
+	}
+}
+
 .compare-modal {
 	overflow: scroll;
+	line-height: 1.5em;
 
 	// Styles below come from .content-modal
 	animation: overlayIn 400ms ease-in-out forwards;
@@ -55,13 +66,57 @@ $large: 994px;
 	}
 
 	&__form-header {
-		margin: 1em 0 0 1.5em;
+		margin: 1em 0 1em 1.5em;
 	}
 
 	&__form-body {
 		// Was the compare-form__row
 		padding: 0 1.5em;
 	}
+
+	&__form-body {}
+
+	&__form-item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border-top: 4px solid #008000;
+		min-height: 220px;
+		padding: 1em;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		border-radius: 0 0 5px 5px;
+		margin-bottom: 1em;
+	}
+
+	&__form-title {}
+
+	&__form-info {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 1em;
+	}
+
+	&__figure {
+		max-width: 30%;
+		margin: 0 1em 2em 0;
+	}
+
+	&__img {
+		width: 100%;
+		border-radius: 3%/5%; // Replace with @mixin.
+	}
+
+	&__text-container {
+		@include content-children();
+	}
+
+	&__text-subheading {
+		margin-bottom: 1em;
+	}
+
+	&__text-description {}
+
+	&__input-wrapper {}
 
 	&__close-button {
 		position: absolute;

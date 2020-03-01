@@ -28,13 +28,24 @@ class CompareModal extends React.Component {
 							{
 								this.props.checkBoxItems.map((item, index) => {
 									return (
-										<div key={item.productId}>
-											<input type="checkbox"
-												id={item.productId}
-												name={item.productName}
-												value={item.productName}
-												onChange={(e) => this.props.checkItem(e)} />
-											<label >Add {item.productName} to Compare</label>
+										<div className="compare-modal__form-item" key={item.productId}>
+											<div className="compare-modal__form-info">
+												<figure className="compare-modal__figure">
+													<img alt="" className="compare-modal__img card-img" src={item.cardArt} />
+												</figure>
+												<div className="compare-modal__text-container">
+													<h4 className="compare-modal__text-subheading">{item.productName}</h4>
+													<p className="compare-modal__text-description">{item.description}</p>
+												</div>
+											</div>
+											<div className="compare-modal__input-wrapper">
+												<input type="checkbox"
+													id={item.productId}
+													name={item.productName}
+													value={item.productName}
+													onChange={(e) => this.props.checkItem(e)} />
+												<label >Add {item.productName} to Compare</label>
+											</div>
 										</div>
 									)
 								})

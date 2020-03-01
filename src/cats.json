@@ -3,6 +3,7 @@
 		"productName": "Cat No. 1",
 		"applicationURL": "cat1.html",
 		"productPageURL": "cat1/adopt.html",
+		"description": "This is a fantastic and furry cat. This cat has shiny fur and round eyes.",
 		"cardArt": "http://placekitten.com/496/312"
 	},
 	{
@@ -10,6 +11,7 @@
 		"productName": "Cat No. 2",
 		"applicationURL": "cat2.html",
 		"productPageURL": "cat2/adopt.html",
+		"description": "This is a fantastic and furry cat2. I want to say so much about this cat. What pointy ears and a long tail. The whiskers are long and the belly is so soft.",
 		"cardArt": "http://placekitten.com/g/496/312"
 	},
 	{
@@ -17,6 +19,7 @@
 		"productName": "Cat No. 3",
 		"applicationURL": "cat3.html",
 		"productPageURL": "cat3/adopt.html",
+		"description": "This is a fantastic and furry cat3.",
 		"cardArt": "http://placekitten.com/g/496/312"
 	},
 	{
@@ -24,6 +27,7 @@
 		"productName": "Bear No. 1",
 		"applicationURL": "bear1.html",
 		"productPageURL": "bear1/adopt.html",
+		"description": "This is a fantastic and furry bear1.",
 		"cardArt": "http://placebear.com/496/312"
 	}
 ]
