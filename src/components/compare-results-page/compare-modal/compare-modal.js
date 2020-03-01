@@ -12,27 +12,27 @@ class CompareModal extends React.Component {
 			loading: true,
 			checkBoxItems: null,
 			selectedItemIds: [],
-			selectedItemsToRender: []
+			selectedItemsToRender: [],
+			checked: false
 		}
 	}
 
 	checkItem(e) {
-		// e.preventDefault();
-		// // console.log("item checked");
-		// // console.log(e.target);
-		// let updatedIdsList;
-		// // If the checkbox was not already selected, add it to the array.
-		// if (this.state.selectedItemIds.indexOf(e.target.id) === -1) {
-		// 	updatedIdsList = this.state.selectedItemIds.concat(e.target.id);
-		// 	// If the checkbox was already selected, remove it from the array.
-		// } else {
-		// 	updatedIdsList = this.state.selectedItemIds.filter((item) => {
-		// 		return item !== e.target.id;
-		// 	})
-		// }
-		// this.setState(() => ({
-		// 	selectedItemIds: updatedIdsList
-		// }))
+		console.log("target: ", e.target);// console.log("item checked");
+		console.log("is target checked: ", e.target.checked);
+		let updatedIdsList;
+		// If the checkbox was not already selected, add it to the array.
+		if (this.state.selectedItemIds.indexOf(e.target.id) === -1) {
+			updatedIdsList = this.state.selectedItemIds.concat(e.target.id);
+			// If the checkbox was already selected, remove it from the array.
+		} else {
+			updatedIdsList = this.state.selectedItemIds.filter((item) => {
+				return item !== e.target.id;
+			})
+		}
+		this.setState(() => ({
+			selectedItemIds: updatedIdsList
+		}))
 	}
 
 	getOptionsFromJSON() {
