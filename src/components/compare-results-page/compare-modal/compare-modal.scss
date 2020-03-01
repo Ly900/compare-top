@@ -60,13 +60,19 @@ $large: 994px;
 	}
 
 	&__title {
-		font-weight: bold;
+		margin: 0;
 		text-transform: uppercase;
 		color: white;
+		// Temporary styles below
+		font-weight: bold;
+		font-size: 16px;
 	}
 
 	&__form-header {
-		margin: 1em 0 1em 1.5em;
+		margin: 1em 0 .75em 1.5em;
+		font-weight: bolder;
+		// Temp styles
+		font-size: 20px;
 	}
 
 	&__form-body {
