@@ -86,12 +86,28 @@ $large: 994px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		border-top: 4px solid #008000;
+		border-top: 4px solid $blue;
 		min-height: 220px;
 		padding: 1em;
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 		border-radius: 0 0 5px 5px;
 		margin-bottom: 1em;
+
+		&_cat1 {
+			border-top: 4px solid #008000;
+		}
+
+		&_cat2 {
+			border-top: 4px solid #0F3D70;
+		}
+
+		&_cat3 {
+			border-top: 4px solid #0C0D0E;
+		}
+
+		&_bear1 {
+			border-top: 4px solid #68696A;
+		}
 	}
 
 	&__form-title {}

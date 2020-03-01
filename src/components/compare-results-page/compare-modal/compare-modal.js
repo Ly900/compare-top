@@ -28,7 +28,7 @@ class CompareModal extends React.Component {
 							{
 								this.props.checkBoxItems.map((item, index) => {
 									return (
-										<div className="compare-modal__form-item" key={item.productId}>
+										<div className={`compare-modal__form-item compare-modal__form-item_${item.productId}`} key={item.productId}>
 											<div className="compare-modal__form-info">
 												<figure className="compare-modal__figure">
 													<img alt="" className="compare-modal__img card-img" src={item.cardArt} />
