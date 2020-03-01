@@ -60,7 +60,7 @@ class CompareResultsPage extends React.Component {
 			loading: false,
 			checkBoxItems: options
 		}));
-		this.setEventHandlers();
+		// this.setEventHandlers();
 	}
 
 	checkItem(e) {
@@ -126,13 +126,14 @@ class CompareResultsPage extends React.Component {
 					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
 					sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   			</p>
-				<CompareModal
+				{/* <CompareModal
 					loading={this.state.loading}
 					checkBoxItems={this.state.checkBoxItems}
 					selectedItemIds={this.state.selectedItemIds}
 					selectedItemsToRender={this.state.selectedItemsToRender}
 					checkItem={(e) => this.checkItem(e)}
-					onSubmit={(e) => this.onSubmit(e)} />
+					onSubmit={(e) => this.onSubmit(e)} /> */}
+				<CompareModal />
 			</div>
 		);
 	}

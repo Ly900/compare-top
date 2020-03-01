@@ -3,13 +3,57 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 // import '../../compare-top/compare-top.scss';
 // import blankCard from './blank-card.svg';
-// import JSONData from '../../../cats.json';
+import JSONData from '../../../cats.json';
 
 class CompareModal extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			loading: true,
+			checkBoxItems: null,
+			selectedItemIds: [],
+			selectedItemsToRender: []
+		}
+	}
+
+	checkItem(e) {
+		// e.preventDefault();
+		// // console.log("item checked");
+		// // console.log(e.target);
+		// let updatedIdsList;
+		// // If the checkbox was not already selected, add it to the array.
+		// if (this.state.selectedItemIds.indexOf(e.target.id) === -1) {
+		// 	updatedIdsList = this.state.selectedItemIds.concat(e.target.id);
+		// 	// If the checkbox was already selected, remove it from the array.
+		// } else {
+		// 	updatedIdsList = this.state.selectedItemIds.filter((item) => {
+		// 		return item !== e.target.id;
+		// 	})
+		// }
+		// this.setState(() => ({
+		// 	selectedItemIds: updatedIdsList
+		// }))
+	}
+
+	getOptionsFromJSON() {
+		const options = JSONData.map((option) => {
+			return option;
+		})
+		return options;
+	}
+
+	componentDidMount() {
+		const options = this.getOptionsFromJSON();
+		this.setState(() => ({
+			loading: false,
+			checkBoxItems: options
+		}));
+		// this.setEventHandlers();
+	}
 
 	render() {
 
-		if (this.props.loading) {
+		if (this.state.loading) {
 			return <div>Loading...</div>;
 		}
 
@@ -22,11 +66,11 @@ class CompareModal extends React.Component {
 							<FontAwesomeIcon icon={faTimesCircle} />
 						</button>
 					</header>
-					<form onSubmit={(e) => this.props.onSubmit(e)} className="compare-modal__form">
+					<form onSubmit={(e) => this.onSubmit(e)} className="compare-modal__form">
 						<p id="contentID" className="compare-modal__form-header">Choose up to 3 animals</p>
 						<div className="compare-modal__form-body">
 							{
-								this.props.checkBoxItems.map((item, index) => {
+								this.state.checkBoxItems.map((item, index) => {
 									return (
 										<div className={`compare-modal__form-item compare-modal__form-item_${item.productId}`} key={item.productId}>
 											<div className="compare-modal__form-info">
@@ -38,13 +82,13 @@ class CompareModal extends React.Component {
 													<p className="compare-modal__text-description">{item.description}</p>
 												</div>
 											</div>
-											<div className="compare-modal__input-wrapper">
-												<input type="checkbox"
+											<div className="compare-modal__checkbox-container">
+												<input type="checkbox" className="compare-modal__checkbox-input"
 													id={item.productId}
-													name={item.productName}
-													value={item.productName}
-													onChange={(e) => this.props.checkItem(e)} />
-												<label >Add {item.productName} to Compare</label>
+													name={item.productId}
+													value={item.productId}
+													onChange={(e) => this.checkItem(e)} />
+												<label className="compare-modal__checkbox-label" tabindex="-1" for={item.productId}>Add {item.productName} to Compare</label>
 											</div>
 										</div>
 									)
@@ -53,9 +97,9 @@ class CompareModal extends React.Component {
 						</div>
 						{
 
-							this.props.selectedItemsToRender.map((item, index) => {
-								return <p key={index}>{item.productName}</p>
-							})
+							// this.props.selectedItemsToRender.map((item, index) => {
+							// 	return <p key={index}>{item.productName}</p>
+							// })
 
 						}
 						<input type="submit" />
