@@ -13,6 +13,10 @@ $large: 994px;
 	text-shadow: none;
 }
 
+.compare-top__outer-wrapper {
+	// border: 5px solid black;
+	// background: white;
+}
 
 // Temporary Mixins
 @mixin respond-min($screenWidth) {
@@ -40,14 +44,14 @@ $large: 994px;
 	}
 
 	$imgShowsScreenSize: 800px;
-	// background: pink;
+	background: white;
 	border-bottom: 3px solid black;
 	text-align: center;
 	padding: 1em;
 
 	&__inner-wrapper {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-around;
 		margin: 0 auto;
 		max-width: 74.375em;
 	}
@@ -175,6 +179,18 @@ $large: 994px;
 			display: none;
 
 		}
+	}
+
+	&_position_fixed {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		margin: 0 auto;
+		z-index: 3;
+		width: 100%;
+		-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
 	}
 
 }

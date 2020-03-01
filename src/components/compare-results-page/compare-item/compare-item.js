@@ -4,6 +4,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import '../compare-top/compare-top.scss';
 import blankCard from './blank-card.svg';
 // import { getPIDValues } from '../../../utils/utils.js';
+import '../compare-modal/compare-modal.scss';
 
 const CompareItem = (props) => {
 	// console.log("props.item: ", props.item);

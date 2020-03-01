@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from "jquery";
 import '../../utils/utils.scss';
 // import '../compare-top/compare-top.scss';
 import '../../utils/utils.js';
@@ -26,13 +27,40 @@ class CompareResultsPage extends React.Component {
 		return options;
 	}
 
+	handleStickiness() {
+		const $compareTopOuterWrapper = $(".compare-top__outer-wrapper");
+		console.log($compareTopOuterWrapper.offset().top);
+
+	}
+
+	setEventHandlers() {
+		$(window).on("scroll resize", () => {
+			// console.log("scrolling");
+			// this.handleStickiness();
+			const $compareTopOuterWrapper = $(".compare-top__outer-wrapper");
+			const $compareTop = $(".compare-top");
+			const $rootDiv = $("#root");
+			var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+				scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+			console.log(scrollTop);
+
+			if (scrollTop >= $compareTopOuterWrapper.offset().top) {
+				$compareTop.addClass("compare-top_position_fixed");
+			} else {
+				$compareTop.removeClass("compare-top_position_fixed");
+			}
+
+		});
+	}
 
 	componentDidMount() {
 		const options = this.getOptionsFromJSON();
 		this.setState(() => ({
 			loading: false,
 			checkBoxItems: options
-		}))
+		}));
+		this.setEventHandlers();
 	}
 
 	checkItem(e) {

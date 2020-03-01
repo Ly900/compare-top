@@ -1,0 +1,79 @@
+// Temporary Variables
+$blue: #0667BA;
+$medium: 780px;
+$large: 994px;
+
+// Temporary Mixins
+@mixin respond-min($screenWidth) {
+	@media (min-width:$screenWidth) {
+		@content;
+	}
+}
+
+.compare-modal {
+	overflow: scroll;
+
+	// Styles below come from .content-modal
+	animation: overlayIn 400ms ease-in-out forwards;
+	display: block;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 600;
+
+	&__wrapper {
+		position: static;
+		width: 90%;
+		margin: 5vh auto;
+		max-width: 900px;
+		max-height: none;
+		border-radius: 3px;
+		background: #fff;
+		box-shadow: rgba(0, 0, 0, 0.5) 0px 32px 15px -22px;
+		z-index: 11000;
+		top: 15vh;
+		transform-origin: center left;
+
+		@include respond-min($medium) {
+			margin: 15vh auto 5vh auto;
+		}
+	}
+
+	&__header {
+		position: relative;
+		padding: 1em 1.5em;
+		background-color: $blue;
+	}
+
+	&__title {
+		font-weight: bold;
+		text-transform: uppercase;
+		color: white;
+	}
+
+	&__form-header {
+		margin: 1em 0 0 1.5em;
+	}
+
+	&__form-body {
+		// Was the compare-form__row
+		padding: 0 1.5em;
+	}
+
+	&__close-button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+		padding: 0.5em;
+		background: none;
+		border: none;
+		-webkit-appearance: button;
+		cursor: pointer;
+		font-size: 28px;
+		color: white;
+	}
+}
