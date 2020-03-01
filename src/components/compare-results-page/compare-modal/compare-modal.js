@@ -13,13 +13,18 @@ class CompareModal extends React.Component {
 			checkBoxItems: null,
 			selectedItemIds: [],
 			selectedItemsToRender: [],
-			checked: false
+			pids: ["cat1", "bear1", "cat2"]	// Replace with dynamic code to parse and get pids from URL.
 		}
 	}
 
+	onSubmit(e) {
+		e.preventDefault();
+		// TO DO: Insert code to redirect to URL with pids in query string.
+	}
+
 	checkItem(e) {
-		console.log("target: ", e.target);// console.log("item checked");
-		console.log("is target checked: ", e.target.checked);
+		// console.log("target: ", e.target);// console.log("item checked");
+		// console.log("is target checked: ", e.target.checked);
 		let updatedIdsList;
 		// If the checkbox was not already selected, add it to the array.
 		if (this.state.selectedItemIds.indexOf(e.target.id) === -1) {
@@ -30,9 +35,22 @@ class CompareModal extends React.Component {
 				return item !== e.target.id;
 			})
 		}
-		this.setState(() => ({
-			selectedItemIds: updatedIdsList
+		this.setState((e) => ({
+			selectedItemIds: updatedIdsList,
 		}))
+	}
+
+	precheckCheckboxes() {
+		// console.log("pids: ", this.state.pids);
+		this.state.pids.forEach((pid) => {
+			document.getElementById(pid).checked = true;
+		});
+		this.setState({
+			selectedItemIds: this.state.pids
+		}, () => {
+			console.log("selectedItemIds: ", this.state.selectedItemIds);
+		}
+		);
 	}
 
 	getOptionsFromJSON() {
@@ -44,11 +62,14 @@ class CompareModal extends React.Component {
 
 	componentDidMount() {
 		const options = this.getOptionsFromJSON();
-		this.setState(() => ({
-			loading: false,
-			checkBoxItems: options
-		}));
-		// this.setEventHandlers();
+		this.setState(
+			{
+				loading: false,
+				checkBoxItems: options
+			}, () => {
+				this.precheckCheckboxes();
+			}
+		);
 	}
 
 	render() {
@@ -87,6 +108,7 @@ class CompareModal extends React.Component {
 													id={item.productId}
 													name={item.productId}
 													value={item.productId}
+													// checked={this.state.checked}
 													onChange={(e) => this.checkItem(e)} />
 												<label className="compare-modal__checkbox-label" tabIndex="-1" htmlFor={item.productId}>Add <span className="sr-only">{item.productName}</span> to Compare</label>
 											</div>
